@@ -18,15 +18,33 @@ module.exports = function (config) {
     coverageIstanbulReporter: {
       dir: require('path').join(__dirname, '../coverage'),
       subdir: '.',
-      reports: ['html', 'lcovonly'],
+      reporters: [
+        { type: 'html', subdir: 'html-report' },
+        { type: 'lcov', subdir: 'lcov-report' }
+      ],
       fixWebpackSourcePaths: true,
-      thresholds: {
-        emitWarning: false, // <- this is important to make karma fail
+      // check: {
+      //   global: {
+      //     statements: 100,
+      //     branches: 100,
+      //     functions: 100,
+      //     lines: 100
+      //   }
+      // }
+    },
+    coverageReporter: {
+      dir: require('path').join(__dirname, './coverage/<project-name>'),
+      subdir: '.',
+      reporters: [
+        { type: 'html' },
+        { type: 'text-summary' }
+      ],
+      check: {
         global: {
-          statements: 85,
-          lines: 85,
-          branches: 85,
-          functions: 85
+          statements: 100,
+          branches: 100,
+          functions: 100,
+          lines: 100
         }
       }
     },
