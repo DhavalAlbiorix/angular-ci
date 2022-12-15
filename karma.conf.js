@@ -15,23 +15,23 @@ module.exports = function (config) {
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
-    coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, '../coverage'),
-      subdir: '.',
-      reporters: [
-        { type: 'html', subdir: 'html-report' },
-        { type: 'lcov', subdir: 'lcov-report' }
-      ],
-      fixWebpackSourcePaths: true,
-      // check: {
-      //   global: {
-      //     statements: 100,
-      //     branches: 100,
-      //     functions: 100,
-      //     lines: 100
-      //   }
-      // }
-    },
+    // coverageIstanbulReporter: {
+    //   dir: require('path').join(__dirname, '../coverage'),
+    //   subdir: '.',
+    //   reporters: [
+    //     { type: 'html', subdir: 'html-report' },
+    //     { type: 'lcov', subdir: 'lcov-report' }
+    //   ],
+    //   fixWebpackSourcePaths: true,
+    //   // check: {
+    //   //   global: {
+    //   //     statements: 100,
+    //   //     branches: 100,
+    //   //     functions: 100,
+    //   //     lines: 100
+    //   //   }
+    //   // }
+    // },
     coverageReporter: {
       dir: require('path').join(__dirname, './coverage/<project-name>'),
       subdir: '.',
