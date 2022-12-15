@@ -23,13 +23,11 @@ module.exports = function (config) {
         { type: 'lcov', subdir: 'lcov-report' }
       ],
       fixWebpackSourcePaths: true,
-      check: {
-        global: {
+      thresholds: {
           statements: 100,
           branches: 100,
           functions: 100,
           lines: 100
-        }
       }
     },
     reporters: ['progress', 'kjhtml'],
