@@ -18,16 +18,16 @@ module.exports = function (config) {
     coverageIstanbulReporter: {
       dir: require('path').join(__dirname, '../coverage'),
       subdir: '.',
-      reporters: [
-        { type: 'html', subdir: 'html-report' },
-        { type: 'lcov', subdir: 'lcov-report' }
-      ],
+      reports: ['html', 'lcovonly'],
       fixWebpackSourcePaths: true,
       thresholds: {
-          statements: 100,
-          branches: 100,
-          functions: 100,
-          lines: 100
+        emitWarning: false, // <- this is important to make karma fail
+        global: {
+          statements: 85,
+          lines: 85,
+          branches: 85,
+          functions: 85
+        }
       }
     },
     reporters: ['progress', 'kjhtml'],
